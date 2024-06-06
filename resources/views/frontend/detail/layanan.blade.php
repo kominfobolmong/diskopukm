@@ -1,10 +1,10 @@
-@extends('frontend.detail.app', ['menu' => 'Beranda', 'breadcrumb' => 'Standar Pelayanan'])
+@extends('frontend.detail.app', ['menu' => 'Beranda', 'breadcrumb' => 'Layanan'])
 
 @section('content')
 
-<div class="section-header">
-    <h2>SK Standar Pelayanan Publik Dinkes</h2>
-</div>
+{{-- <div class="section-header">
+    <h2>Layanan</h2>
+</div> --}}
 
 <div class="row gy-4">
 

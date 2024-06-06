@@ -1,9 +1,9 @@
 <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Beranda | Dinas Kesehatan Kabupaten Bolaang Mongondow</title>
-  <meta content="Website Resmi Dinas Kesehatan Kabupaten Bolaang Mongondow" name="description">
-  <meta content="Dinas Kesehatan, Dinkes, Bolaang Mongondow, Bolmong" name="keywords">
+  <title>Dinas Koperasi Usaha Kecil dan Menengah Kabupaten Bolaang Mongondow</title>
+  <meta content="Website Resmi Dinas Koperasi Usaha Kecil dan Menengah Kabupaten Bolaang Mongondow" name="description">
+  <meta content="Dinas Koperasi Usaha Kecil dan Menengah, Diskopukm, Bolaang Mongondow, Bolmong" name="keywords">
 
   <!-- Favicons -->
   <link href="{{ Storage::url($profil->favicon ?? null) }}" rel="icon">

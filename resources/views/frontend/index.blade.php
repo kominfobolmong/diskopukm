@@ -18,7 +18,7 @@
   <main id="main">
 
     <!-- ======= About Us Section ======= -->
-    @include('frontend.layouts.about')
+    {{-- @include('frontend.layouts.about') --}}
     <!-- End About Us Section -->
 
     <!-- ======= Stats Counter Section ======= -->
@@ -29,14 +29,14 @@
     @include('frontend.layouts.kegiatan')
     <!-- End Portfolio Section -->
 
-    @include('frontend.layouts.standar_pelayanan')
+    {{-- @include('frontend.layouts.standar_pelayanan') --}}
 
     <!-- ======= Recent Blog Posts Section ======= -->
     @include('frontend.layouts.berita')
     <!-- End Recent Blog Posts Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    @include('frontend.layouts.faq')
+    {{-- @include('frontend.layouts.faq') --}}
     <!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->

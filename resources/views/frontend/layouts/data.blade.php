@@ -11,17 +11,17 @@
 
           <div class="stats-item d-flex align-items-center">
             <span data-purecounter-start="0" data-purecounter-end="{{ $layanans->count() }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p><strong>Layanan</strong></p>
+            <p><strong>Data Koperasi</strong></p>
           </div><!-- End Stats Item -->
 
           <div class="stats-item d-flex align-items-center">
             <span data-purecounter-start="0" data-purecounter-end="{{ $photos->count() }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p><strong>Kegiatan</strong></p>
+            <p><strong>Data UKM</strong></p>
           </div><!-- End Stats Item -->
 
           <div class="stats-item d-flex align-items-center">
             <span data-purecounter-start="0" data-purecounter-end="{{ $news->count() }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p><strong>Berita</strong></p>
+            <p><strong>Layanan</strong></p>
           </div><!-- End Stats Item -->
 
         </div>

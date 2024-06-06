@@ -19,7 +19,7 @@
       <a href="{{ '/' }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         {{-- <img src="{{ asset('front/img/logo.png') }}" alt=""> --}}
-        <h1>Dinas Kesehatan<br>Kabupaten Bolaang Mongondow<span>.</span></h1>
+        <h1>Dinas Koperasi Usaha Kecil dan Menengah<br>Kabupaten Bolaang Mongondow<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -32,7 +32,9 @@
             </ul>
           </li>
           <li><a href="{{ route('layanan') }}">Layanan</a></li>
-          <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="{{ route('layanan') }}">Data Koperasi</a></li>
+          <li><a href="{{ route('layanan') }}">Data UKM</a></li>
+          {{-- <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="{{ route('berita') }}">Berita</a></li>
               <li><a href="{{ route('kegiatan') }}">Kegiatan</a></li>
@@ -41,14 +43,14 @@
               <li><a href="{{ route('informasi-setiap-saat') }}">Informasi Setiap Saat</a></li>
               <li><a href="{{ route('informasi-dikecualikan') }}">Informasi Dikecualikan</a></li>
             </ul>
-          </li>
-          <li><a href="#contact">Hubungi Kami</a></li>
-          <li class="dropdown"><a href="#"><span>Lainnya</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          </li> --}}
+          {{-- <li><a href="#contact">Hubungi Kami</a></li> --}}
+          {{-- <li class="dropdown"><a href="#"><span>Lainnya</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="https://surveiikm.bolmongkab.go.id" target="_blank">Survey IKM</a></li>
               <li><a href="https://www.lapor.go.id/instansi/dinas-kesehatan-kabupaten-bolaang-mongondow" target="_blank">SPAN LAPOR</a></li>
             </ul>
-          </li>
+          </li> --}}
         </ul>
       </nav><!-- .navbar -->
 

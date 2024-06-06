@@ -2,7 +2,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-header">
-        <h2>Kegiatan Terbaru</h2>
+        <h2>Layanan</h2>
       </div>
 
       <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">

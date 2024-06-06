@@ -62,7 +62,7 @@
             @endforeach
         </ul>
 
-        &copy; Copyright <strong><span>{{ date('Y') }}</span></strong>. Dinas Kesehatan Kab. Bolaang Mongondow
+        &copy; Copyright <strong><span>{{ date('Y') }}</span></strong>. Dinas Koperasi Usaha Kecil dan Menengah Kab. Bolaang Mongondow
       </div>
       <div class="credits">
         Developed by <a href="https://diskominfo.bolmongkab.go.id/">Egov Team</a>
