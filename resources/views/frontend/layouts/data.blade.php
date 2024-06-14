@@ -10,12 +10,12 @@
         <div class="col-lg-6">
 
           <div class="stats-item d-flex align-items-center">
-            <span data-purecounter-start="0" data-purecounter-end="{{ $layanans->count() }}" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ $count_koperasi }}" data-purecounter-duration="1" class="purecounter"></span>
             <p><strong>Data Koperasi</strong></p>
           </div><!-- End Stats Item -->
 
           <div class="stats-item d-flex align-items-center">
-            <span data-purecounter-start="0" data-purecounter-end="{{ $photos->count() }}" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ $count_ukm }}" data-purecounter-duration="1" class="purecounter"></span>
             <p><strong>Data UKM</strong></p>
           </div><!-- End Stats Item -->
 

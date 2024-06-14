@@ -35,7 +35,7 @@
     </div><!-- End Breadcrumbs -->
 
     <section class="sample-page">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
 
         @yield('content')
 

@@ -17,6 +17,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Faq;
 use App\Models\Infografis;
+use App\Models\Kecamatan;
+use App\Models\Koperasi;
 use App\Models\Link;
 use App\Models\News;
 use App\Models\Photo;
@@ -24,9 +26,11 @@ use App\Models\Potensi;
 use App\Models\Profile;
 use App\Models\Profpeg;
 use App\Models\Sosmed;
+use App\Models\Ukm;
 use App\Models\Video;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -43,6 +47,9 @@ class PageController extends Controller
         // $services = Service::select('id')->get();
         $layanans = Service::get();
 
+        $count_koperasi = DB::table('koperasis')->count();
+        $count_ukm = DB::table('ukms')->count();
+
         return view('frontend.index', compact(
             'contact',
             'profil',
@@ -52,6 +59,8 @@ class PageController extends Controller
             'news',
             'faq',
             'layanans',
+            'count_koperasi',
+            'count_ukm'
         ));
     }
 
@@ -118,6 +127,31 @@ class PageController extends Controller
         $links = Link::latest()->get();
 
         return view('frontend.detail.layanan', compact('sosmeds', 'links', 'profil', 'contact', 'layanans'));
+    }
+
+    public function koperasi()
+    {
+        $items = Koperasi::latest()->get();
+        $kecamatan = Kecamatan::get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+
+        return view('frontend.detail.koperasi', compact('sosmeds', 'links', 'profil', 'contact', 'items', 'kecamatan'));
+    }
+
+    public function ukm()
+    {
+        $items = Ukm::latest()->get();
+        $kecamatan = Kecamatan::get();
+        // $tahun = Ukm::select('tahun')->get();
+        $contact = Contact::first();
+        $profil = Profile::select('logo', 'favicon')->first();
+        $sosmeds = Sosmed::get();
+        $links = Link::latest()->get();
+
+        return view('frontend.detail.ukm', compact('sosmeds', 'links', 'profil', 'contact', 'items', 'kecamatan'));
     }
 
     // controller for route media
@@ -278,5 +312,4 @@ class PageController extends Controller
             'links',
         ));
     }
-
 }

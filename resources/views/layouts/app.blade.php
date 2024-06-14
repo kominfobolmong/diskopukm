@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard &mdash; Dinas Kesehatan Kabupaten Bolaang Mongondow</title>
+    <title>Dashboard &mdash; Dinas Koperasi Usaha Kecil dan Menengah Kabupaten Bolaang Mongondow</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/bolmongkab.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -59,10 +59,10 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="#">DINKES</a>
+                        <a href="#">DISKOPUKM</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="#">DINKES</a>
+                        <a href="#">DISKOPUKM</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">MAIN MENU</li>
@@ -89,6 +89,16 @@
                         @can('services.index')
                             <li class="{{ setActive('admin/service') }}"><a class="nav-link" href="{{ route('service.index') }}"><i class="fas fa-concierge-bell"></i>
                         <span>Layanan</span></a></li>
+                        @endcan
+
+                        @can('koperasi.index')
+                            <li class="{{ setActive('admin/koperasi') }}"><a class="nav-link" href="{{ route('koperasi.index') }}"><i class="fas fa-file-image"></i>
+                        <span>Koperasi</span></a></li>
+                        @endcan
+
+                        @can('ukm.index')
+                            <li class="{{ setActive('admin/ukm') }}"><a class="nav-link" href="{{ route('ukm.index') }}"><i class="fas fa-file-image"></i>
+                        <span>UKM</span></a></li>
                         @endcan
 
                         @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index') || auth()->user()->can('downloads.index'))

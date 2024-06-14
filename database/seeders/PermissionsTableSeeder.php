@@ -115,5 +115,30 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'faq.create']);
         Permission::create(['name' => 'faq.edit']);
         Permission::create(['name' => 'faq.delete']);
+
+        Permission::create(['name' => 'kabupaten.index']);
+        Permission::create(['name' => 'kabupaten.create']);
+        Permission::create(['name' => 'kabupaten.edit']);
+        Permission::create(['name' => 'kabupaten.delete']);
+
+        Permission::create(['name' => 'kecamatan.index']);
+        Permission::create(['name' => 'kecamatan.create']);
+        Permission::create(['name' => 'kecamatan.edit']);
+        Permission::create(['name' => 'kecamatan.delete']);
+
+        Permission::create(['name' => 'desa.index']);
+        Permission::create(['name' => 'desa.create']);
+        Permission::create(['name' => 'desa.edit']);
+        Permission::create(['name' => 'desa.delete']);
+
+        Permission::create(['name' => 'koperasi.index']);
+        Permission::create(['name' => 'koperasi.create']);
+        Permission::create(['name' => 'koperasi.edit']);
+        Permission::create(['name' => 'koperasi.delete']);
+
+        Permission::create(['name' => 'ukm.index']);
+        Permission::create(['name' => 'ukm.create']);
+        Permission::create(['name' => 'ukm.edit']);
+        Permission::create(['name' => 'ukm.delete']);
     }
 }

@@ -32,8 +32,8 @@
             </ul>
           </li>
           <li><a href="{{ route('layanan') }}">Layanan</a></li>
-          <li><a href="{{ route('layanan') }}">Data Koperasi</a></li>
-          <li><a href="{{ route('layanan') }}">Data UKM</a></li>
+          <li><a href="{{ route('koperasi') }}">Koperasi</a></li>
+          <li><a href="{{ route('ukm') }}">UKM</a></li>
           {{-- <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="{{ route('berita') }}">Berita</a></li>
