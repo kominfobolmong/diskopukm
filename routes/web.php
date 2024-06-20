@@ -20,7 +20,6 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UkmController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -37,18 +36,7 @@ Route::prefix('profil')->group(function () {
 Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
 Route::get('/koperasi', [PageController::class, 'koperasi'])->name('koperasi');
 Route::get('/ukm', [PageController::class, 'ukm'])->name('ukm');
-
-// Route::prefix('informasi')->group(function () {
-//     Route::get('/berita', [PageController::class, 'berita'])->name('berita');
-//     Route::get('/berita/{news:slug}', [PageController::class, 'berita_detail'])->name('berita-detail');
-//     Route::get('/berita/categories/{slug}', [PageController::class, 'kategori'])->name('cari-kategori');
-//     Route::get('/berita/tag/{tag:slug}', [PageController::class, 'tag'])->name('cari-tag');
-//     Route::get('/kegiatan', [PageController::class, 'kegiatan'])->name('kegiatan');
-//     Route::get('/informasi-berkala', [PageController::class, 'informasi_berkala'])->name('informasi-berkala');
-//     Route::get('/informasi-serta-merta', [PageController::class, 'informasi_serta_merta'])->name('informasi-serta-merta');
-//     Route::get('/informasi-setiap-saat', [PageController::class, 'informasi_setiap_saat'])->name('informasi-setiap-saat');
-//     Route::get('/informasi-dikecualikan', [PageController::class, 'informasi_dikecualikan'])->name('informasi-dikecualikan');
-// });
+Route::get('/ukm/{id}', [PageController::class, 'ukm']);
 
 Route::prefix('bolmongmaju/diskopukm')->group(function () {
     Auth::routes([

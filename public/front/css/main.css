@@ -23,7 +23,7 @@
 /* Colors */
 :root {
     --color-default: #222222;
-    --color-primary: #008374;
+    --color-primary: #1a71c1;
     --color-secondary: #f85a40;
 }
 
@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-    color: #00b6a1;
+    color: #478dcd;
     text-decoration: none;
 }
 
@@ -242,7 +242,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-    background: #00796b;
+    background: #478dcd;
     height: 40px;
     font-size: 14px;
     transition: all 0.5s;
@@ -431,7 +431,7 @@ section {
         font-size: 15px;
         text-transform: none;
         font-weight: 600;
-        color: #006a5d;
+        color: #478dcd;
     }
 
     .navbar .dropdown ul a i {
@@ -501,7 +501,7 @@ section {
         inset: 0;
         padding: 50px 0 10px 0;
         margin: 0;
-        background: rgba(0, 131, 116, 0.9);
+        background: rgba(51, 36, 255, 0.9);
         overflow-y: auto;
         transition: 0.3s;
         z-index: 9998;
@@ -557,8 +557,8 @@ section {
         padding: 10px 0;
         margin: 10px 20px;
         transition: all 0.5s ease-in-out;
-        background-color: #007466;
-        border: 1px solid #006459;
+        background-color: #478dcd;
+        border: 1px solid #478dcd;
     }
 
     .navbar .dropdown > .dropdown-active,
@@ -1734,7 +1734,7 @@ section {
 
 .contact .info-item {
     width: 100%;
-    background-color: #009282;
+    background-color: #478dcd;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -1807,7 +1807,7 @@ section {
 .contact .php-email-form .sent-message {
     display: none;
     color: #fff;
-    background: #059652;
+    background: #478dcd;
     text-align: center;
     padding: 15px;
     font-weight: 600;
@@ -1865,7 +1865,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-    background: rgba(0, 131, 116, 0.8);
+    background: #f85a40;
 }
 
 @keyframes animate-loading {

@@ -31,6 +31,8 @@ use App\Models\Video;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\Facades\DataTables;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -129,29 +131,71 @@ class PageController extends Controller
         return view('frontend.detail.layanan', compact('sosmeds', 'links', 'profil', 'contact', 'layanans'));
     }
 
-    public function koperasi()
+    public function koperasi(Request $request)
     {
-        $items = Koperasi::latest()->get();
         $kecamatan = Kecamatan::get();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
         $links = Link::latest()->get();
 
-        return view('frontend.detail.koperasi', compact('sosmeds', 'links', 'profil', 'contact', 'items', 'kecamatan'));
+        if ($request->ajax()) {
+
+            $items = Koperasi::latest()->get();
+
+            return DataTables::of($items)
+                ->addIndexColumn()
+                ->editColumn('tahun_berdiri', function ($row) {
+                    return $row->tahun_berdiri ? with(new Carbon($row->tahun_berdiri))->format('m/d/Y') : '';
+                })
+                ->editColumn('kecamatan', function ($row) {
+                    return $row->kecamatan->nama;
+                })
+                ->editColumn('sertifikat', function ($row) {
+                    return $row->sertifikat === 'Y' ? '<span class="badge bg-success">Sudah Bersertifikat</span>' : '<span class="badge bg-warning">Belum Bersertifikat</span>';
+                })
+                ->editColumn('status', function ($row) {
+                    return $row->status === 'Y' ? '<span class="badge bg-success">Aktif</span>' : '<span class="badge bg-danger">Tidak Aktif</span>';
+                })
+                ->rawColumns(['sertifikat', 'status'])
+                ->make(true);
+        }
+
+        return view('frontend.detail.koperasi', compact('sosmeds', 'links', 'profil', 'contact', 'kecamatan'));
     }
 
-    public function ukm()
+    public function ukm(Request $request)
     {
-        $items = Ukm::latest()->get();
         $kecamatan = Kecamatan::get();
-        // $tahun = Ukm::select('tahun')->get();
         $contact = Contact::first();
         $profil = Profile::select('logo', 'favicon')->first();
         $sosmeds = Sosmed::get();
         $links = Link::latest()->get();
 
-        return view('frontend.detail.ukm', compact('sosmeds', 'links', 'profil', 'contact', 'items', 'kecamatan'));
+        if ($request->ajax()) {
+
+            $items = Ukm::latest()->get();
+
+            return DataTables::of($items)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $btn = '<a href="/ukm/' . $row->id . '" class="btn btn-secondary"><i class="bi bi-eye"></i></a>';
+                    return $btn;
+                })
+                ->editColumn('kecamatan', function ($row) {
+                    return $row->desa->kecamatan->nama;
+                })
+                ->editColumn('desa', function ($row) {
+                    return $row->desa->nama;
+                })
+                ->editColumn('jenis_usaha', function ($row) {
+                    return $row->jenis_usaha !== null ? $row->jenis_usaha : '--';
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
+        return view('frontend.detail.ukm', compact('sosmeds', 'links', 'profil', 'contact', 'kecamatan'));
     }
 
     // controller for route media
