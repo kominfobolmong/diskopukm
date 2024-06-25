@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DesaController;
 use App\Http\Controllers\Admin\DownloadController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\KoperasiController;
@@ -71,5 +72,6 @@ Route::prefix('admin')->group(function () {
         Route::resource('faq', FaqController::class);
         Route::resource('koperasi', KoperasiController::class);
         Route::resource('ukm', UkmController::class);
+        Route::resource('desa', DesaController::class);
     });
 });

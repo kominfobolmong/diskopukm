@@ -101,6 +101,11 @@
                         <span>UKM</span></a></li>
                         @endcan
 
+                        @can('desa.index')
+                            <li class="{{ setActive('admin/desa') }}"><a class="nav-link" href="{{ route('desa.index') }}"><i class="fas fa-file-image"></i>
+                        <span>Desa</span></a></li>
+                        @endcan
+
                         @if(auth()->user()->can('photos.index') || auth()->user()->can('videos.index') || auth()->user()->can('downloads.index'))
                         <li class="menu-header">MEDIA</li>
                         @endif
