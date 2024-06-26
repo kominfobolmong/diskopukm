@@ -26,7 +26,7 @@
                           <th scope="col">Desa/Kelurahan</th>
                           <th scope="col">Jenis Usaha</th>
                           <th scope="col">Tahun</th>
-                          <th scope="col">Detail</th>
+                          {{-- <th scope="col">Detail</th> --}}
                         </tr>
                 </thead>
                 <tbody>

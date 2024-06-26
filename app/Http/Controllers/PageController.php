@@ -178,10 +178,10 @@ class PageController extends Controller
 
             return DataTables::of($items)
                 ->addIndexColumn()
-                ->addColumn('action', function ($row) {
-                    $btn = '<a href="/ukm/' . $row->id . '" class="btn btn-secondary"><i class="bi bi-eye"></i></a>';
-                    return $btn;
-                })
+                // ->addColumn('action', function ($row) {
+                //     $btn = '<a href="/ukm/' . $row->id . '" class="btn btn-secondary"><i class="bi bi-eye"></i></a>';
+                //     return $btn;
+                // })
                 ->editColumn('kecamatan', function ($row) {
                     return $row->desa->kecamatan->nama;
                 })
@@ -191,7 +191,7 @@ class PageController extends Controller
                 ->editColumn('jenis_usaha', function ($row) {
                     return $row->jenis_usaha !== null ? $row->jenis_usaha : '--';
                 })
-                ->rawColumns(['action'])
+                // ->rawColumns(['action'])
                 ->make(true);
         }
 

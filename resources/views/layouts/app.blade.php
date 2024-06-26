@@ -228,6 +228,27 @@
                 theme: 'bootstrap4',
                 width: 'style',
             });
+
+            $('#kecamatan-dropdown').on('change', function () {
+                let idKecamatan = this.value;
+                $("#desa-dropdown").html('');
+                $.ajax({
+                    url: "{{url('admin/api/fetch-desa')}}",
+                    type: "POST",
+                    data: {
+                        kecamatan_id: idKecamatan,
+                        _token: '{{csrf_token()}}'
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        $('#desa-dropdown').html('<option value="">-- PILIH DESA/KELURAHAN --</option>');
+                        $.each(result.desas, function (key, value) {
+                            $("#desa-dropdown").append('<option value="' + value
+                                .id + '">' + value.nama + '</option>');
+                        });
+                    }
+                });
+            });
         });
 
         //flash message

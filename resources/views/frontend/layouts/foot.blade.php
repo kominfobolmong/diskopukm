@@ -47,7 +47,7 @@
               {data: 'desa', name: 'desa'},
               {data: 'jenis_usaha', name: 'jenis_usaha'},
               {data: 'tahun', name: 'tahun'},
-              {data: 'action', name: 'action', orderable: false, searchable: false},
+            //   {data: 'action', name: 'action', orderable: false, searchable: false},
           ]
       });
     });

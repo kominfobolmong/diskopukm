@@ -81,13 +81,25 @@
                             </div>
 
                             <div class="form-group">
-                                <label>DESA/KELURAHAN</label>
-                                <select class="form-control select-category @error('desa_id') is-invalid @enderror"
-                                    name="desa_id">
-                                    <option value="">-- PILIH DESA/KELURAHAN --</option>
+                                <label>KECAMATAN</label>
+                                <select id="kecamatan-dropdown" class="form-control select-category @error('kecamatan_id') is-invalid @enderror">
+                                    <option value="">-- PILIH KECAMATAN --</option>
                                     @foreach ($items as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                     @endforeach
+                                </select>
+
+                                @error('kecamatan_id')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label>DESA/KELURAHAN</label>
+                                <select id="desa-dropdown" class="form-control select-category @error('desa_id') is-invalid @enderror" name="desa_id">
+                                    <option value="">-- PILIH DESA/KELURAHAN --</option>
                                 </select>
 
                                 @error('desa_id')

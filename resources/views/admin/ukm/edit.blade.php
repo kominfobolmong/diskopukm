@@ -86,11 +86,30 @@
                             </div>
 
                             <div class="form-group">
+                                <label>KECAMATAN</label>
+                                <select id="kecamatan-dropdown" class="form-control select-category @error('kecamatan_id') is-invalid @enderror">
+                                    <option value="">-- PILIH KECAMATAN --</option>
+                                    @foreach ($kecamatan as $item)
+                                    @if ($ukm->desa->kecamatan->id === $item->id)
+                                    <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
+                                    @else
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
+
+                                @error('kecamatan_id')
+                                <div class="invalid-feedback" style="display: block">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                 <label>DESA/KELURAHAN</label>
-                                <select class="form-control select-category @error('desa_id') is-invalid @enderror"
-                                    name="desa_id">
+                                <select id="desa-dropdown" class="form-control select-category @error('desa_id') is-invalid @enderror" name="desa_id">
                                     <option value="">-- PILIH DESA/KELURAHAN --</option>
-                                    @foreach ($desas as $item)
+                                    @foreach ($desa as $item)
                                     @if ($ukm->desa_id === $item->id)
                                     <option value="{{ $item->id }}" selected>{{ $item->nama }}</option>
                                     @else

@@ -72,6 +72,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('faq', FaqController::class);
         Route::resource('koperasi', KoperasiController::class);
         Route::resource('ukm', UkmController::class);
+        Route::post('api/fetch-desa', [UkmController::class, 'fetchDesa']);
         Route::resource('desa', DesaController::class);
     });
 });

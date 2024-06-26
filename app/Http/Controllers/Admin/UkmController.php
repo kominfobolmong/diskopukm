@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Desa;
+use App\Models\Kecamatan;
 use App\Models\Ukm;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -34,6 +35,12 @@ class UkmController extends Controller
         return view('admin.ukm.index', compact('items'));
     }
 
+    public function fetchDesa(Request $request)
+    {
+        $data['desas'] = Desa::where("kecamatan_id", $request->kecamatan_id)->get(["nama", "id"]);
+        return response()->json($data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +48,7 @@ class UkmController extends Controller
      */
     public function create()
     {
-        $items = Desa::get();
+        $items = Kecamatan::get();
         return view('admin.ukm.create', compact('items'));
     }
 
@@ -109,8 +116,10 @@ class UkmController extends Controller
      */
     public function edit(Ukm $ukm)
     {
-        $desas = Desa::get();
-        return view('admin.ukm.edit', compact('ukm', 'desas'));
+        $kecamatan = Kecamatan::get();
+        $desa = Desa::where("kecamatan_id", $ukm->desa->kecamatan->id)->get();
+
+        return view('admin.ukm.edit', compact('ukm', 'desa', 'kecamatan'));
     }
 
     /**
