@@ -15,4 +15,14 @@ class Koperasi extends Model
     {
         return $this->belongsTo(Kecamatan::class);
     }
+
+    public function getSertifikatAttribute($value)
+    {
+        return $value === 'Y' ? 'Sudah Bersertifikat' : 'Belum Bersertifikat';
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return $value === 'Y' ? 'Aktif' : 'Tidak Aktif';
+    }
 }
