@@ -35,6 +35,8 @@ Route::prefix('profil')->group(function () {
 });
 
 Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
+Route::get('/berita', [PageController::class, 'berita'])->name('berita');
+Route::get('/berita/{news:slug}', [PageController::class, 'berita_detail'])->name('berita-detail');
 Route::get('/koperasi', [PageController::class, 'koperasi'])->name('koperasi');
 Route::get('/ukm', [PageController::class, 'ukm'])->name('ukm');
 Route::get('/ukm/{id}', [PageController::class, 'ukm']);
